@@ -49,6 +49,17 @@
       let TestDataClass = ncmb.DataStore(db);
       let level = parseInt($("#level").val());
       TestDataClass
+        .lessThanOrEqualTo("level", level)
+        .fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
+    function searchLevelGT() {
+      let TestDataClass = ncmb.DataStore(db);
+      let level = parseInt($("#level").val());
+      TestDataClass
         .greaterThanOrEqualTo("level", level)
         .fetchAll()
         .then(function(results) {
@@ -91,6 +102,7 @@
     <br>
     <button class="btn" onclick="searchLevelLT()">Level &lt</button>
     <button class="btn" onclick="searchLevel()">Level</button>
+    <button class="btn" onclick="searchLevelGT()">Level &gt</button>    
   </div>
   <div id="message">message area</div>
 </body>
