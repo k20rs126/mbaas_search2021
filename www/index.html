@@ -49,7 +49,7 @@
       let TestDataClass = ncmb.DataStore(db);
       let level = parseInt($("#level").val());
       TestDataClass
-        .lessThanOrEqualTo("level", level)
+        .lessThan("level", level)
         .fetchAll()
         .then(function(results) {
           showResults(results);
@@ -60,7 +60,7 @@
       let TestDataClass = ncmb.DataStore(db);
       let level = parseInt($("#level").val());
       TestDataClass
-        .greaterThanOrEqualTo("level", level)
+        .greaterThan("level", level)
         .fetchAll()
         .then(function(results) {
           showResults(results);
