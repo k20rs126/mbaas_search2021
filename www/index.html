@@ -71,13 +71,13 @@
 
     function showResults(results) {
       // テーブルのヘッダを生成
-      let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><tr>";
+      let msg = "<table><tr><th>album</th><th>Year</th><th>mainsong</th><tr>";
       for (let i = 0; i < results.length; i++) {
         // 各データを収めた表の列を生成
         msg += "<tr>";
         msg += "<td>" + results[i].album + "</td>";
-        msg += "<td class='num'>" + results[i].mainsong + "</td>";
         msg += "<td class='num'>" + results[i].Year + "</td>";
+        msg += "<td class='num'>" + results[i].mainsong + "</td>";
         msg += "</tr>";
       }
       // テーブルのテイラを生成
