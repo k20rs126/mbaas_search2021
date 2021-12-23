@@ -23,51 +23,62 @@
         })
     }
 
-/*
-    function searchName() {
+    function searchAlbum() {
       let TestDataClass = ncmb.DataStore(db);
-      let name = $("#name").val();
+      let album = $("#album").val();
       TestDataClass
-        .equalTo("name", name)
+        .regularExpressionTo("album", album)
         .fetchAll()
         .then(function(results) {
           showResults(results);
         })
     }
 
-    function searchLevel() {
+    function searchmainsong() {
       let TestDataClass = ncmb.DataStore(db);
-      let level = parseInt($("#level").val());
+      let mainsong = $("#mainsong").val();
       TestDataClass
-        .equalTo("level", level)
+        .regularExpressionTo("mainsong", mainsong)
         .fetchAll()
         .then(function(results) {
           showResults(results);
         })
     }
 
-    function searchLevelLT() {
+
+    function searchYear() {
       let TestDataClass = ncmb.DataStore(db);
-      let level = parseInt($("#level").val());
+      let Year = parseInt($("#Year").val());
       TestDataClass
-        .lessThan("level", level)
+        .equalTo("Year", Year)
         .fetchAll()
         .then(function(results) {
           showResults(results);
         })
     }
 
-    function searchLevelGT() {
+    function searchYearLT() {
       let TestDataClass = ncmb.DataStore(db);
-      let level = parseInt($("#level").val());
+      let Year = parseInt($("#Year").val());
       TestDataClass
-        .greaterThan("level", level)
+        .lessThan("Year", Year)
         .fetchAll()
         .then(function(results) {
           showResults(results);
         })
     }
-*/
+
+    function searchYearGT() {
+      let TestDataClass = ncmb.DataStore(db);
+      let Year = parseInt($("#Year").val());
+      TestDataClass
+        .greaterThan("Year", Year)
+        .fetchAll()
+        .then(function(results) {
+          showResults(results);
+        })
+    }
+
 
     function showResults(results) {
       // テーブルのヘッダを生成
@@ -93,17 +104,21 @@
     <label for="album">album:</label>
     <input id="album" type="text" placeholder="album name">
   </div>
+  <label for="mainsong">mainsong:</label>
+  <input id="mainsong" type="text" placeholder="mainsong name">
+  </div>
   <div>
     <label for="Year">Year:</label>
     <input id="Year" type="number" placeholder="Year">
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
-    <button class="btn" onclick="searchName()">Name</button>
+    <button class="btn" onclick="searchAlbum()">Album</button>
+    <button class="btn" onclick="searchmainsong()">song</button>
     <br>
-    <button class="btn" onclick="searchLevelLT()">Level &lt</button>
-    <button class="btn" onclick="searchLevel()">Level</button>
-    <button class="btn" onclick="searchLevelGT()">Level &gt</button>    
+    <button class="btn" onclick="searchYearLT()">Year &lt</button>
+    <button class="btn" onclick="searchYear()">Year</button>
+    <button class="btn" onclick="searchYearGT()">Year &gt</button>
   </div>
   <div id="message">message area</div>
 </body>
